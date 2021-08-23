@@ -32,9 +32,9 @@ function App() {
           <Products />
         </Route>
         <Route path="/products/:id" children={<SingleProduct />} />
-        <PrivateRoute path="/checkout">
+        <Route path="/checkout">
           <Checkout />
-        </PrivateRoute>
+        </Route>
         <Route path="*">
           <Error />
         </Route>
