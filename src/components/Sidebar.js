@@ -9,42 +9,7 @@ import CartButtons from './CartButtons'
 import { useUserContext } from '../context/user_context'
 
 const Sidebar = () => {
-  const { isSidebarOpen, closeSidebar } = useProductsContext()
-  const { myUser } = useUserContext()
-
-  return (
-    <SidebarContainer>
-      <aside
-        className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}
-      >
-        <div className='sidebar-header'>
-          <img src={logo} className='logo' alt='comfy sloth' />
-          <button className='close-btn' type='button' onClick={closeSidebar}>
-            <FaTimes />
-          </button>
-        </div>
-        <ul className='links'>
-          {links.map(({ id, text, url }) => {
-            return (
-              <li key={id}>
-                <Link to={url} onClick={closeSidebar}>
-                  {text}
-                </Link>
-              </li>
-            )
-          })}
-          {myUser && (
-            <li>
-              <Link to='/checkout' onClick={closeSidebar}>
-                checkout
-              </Link>
-            </li>
-          )}
-        </ul>
-        <CartButtons />
-      </aside>
-    </SidebarContainer>
-  )
+  return <h4>sidebar</h4>
 }
 
 const SidebarContainer = styled.div`
