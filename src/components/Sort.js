@@ -6,8 +6,8 @@ const Sort = () => {
   const {
     filtered_products: products,
     grid_view,
-    // setGridView,
-    // setListView,
+    setGridView,
+    setListView,
     // sort,
     // updateSort,
   } = useFilterContext();
@@ -17,14 +17,14 @@ const Sort = () => {
         <button
           type="button"
           className={`${grid_view ? "active" : null}`}
-          // onClick={setGridView}
+          onClick={setGridView}
         >
           <BsFillGridFill />
         </button>
         <button
           type="button"
           className={`${!grid_view ? "active" : null}`}
-          // onClick={setListView}
+          onClick={setListView}
         >
           <BsList />
         </button>
