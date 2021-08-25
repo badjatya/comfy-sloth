@@ -30,6 +30,12 @@ const filter_reducer = (state, action) => {
         grid_view: false,
       };
 
+    case UPDATE_SORT:
+      return {
+        ...state,
+        sort: action.payload,
+      };
+
     default:
       return { ...state };
   }
