@@ -55,10 +55,19 @@ const filter_reducer = (state, action) => {
           b.name.localeCompare(a.name)
         );
       }
-
       return {
         ...state,
         filtered_products: tempSortProducts,
+      };
+
+    case UPDATE_FILTERS:
+      const { name, value } = action.payload;
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          [name]: value,
+        },
       };
 
     default:
