@@ -39,7 +39,9 @@ const cart_reducer = (state, action) => {
       }
 
     default:
-      return { ...state };
+      return {
+        ...state,
+      };
   }
 };
 
