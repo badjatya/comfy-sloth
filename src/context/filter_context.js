@@ -15,7 +15,7 @@ import { useProductsContext } from "./products_context";
 const initialState = {
   filtered_products: [],
   all_products: [],
-  grid_view: false,
+  grid_view: true,
   sort: "price-lowest",
   filters: {
     text: "",
@@ -64,6 +64,14 @@ export const FilterProvider = ({ children }) => {
     // If name is category
     if (name === "category") {
       value = e.target.textContent;
+    }
+
+    if (name === "color") {
+      value = e.target.dataset.color;
+    }
+
+    if (name === "price") {
+      value = Number(value);
     }
 
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
