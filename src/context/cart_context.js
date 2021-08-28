@@ -36,9 +36,9 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: CLEAR_CART });
   };
 
-  // useEffect(() => {
-  //   // dispatch({ type: COUNT_CART_TOTALS })
-  // }, [state.cart]);
+  useEffect(() => {
+    dispatch({ type: COUNT_CART_TOTALS });
+  }, [state.cart]);
 
   return (
     <CartContext.Provider
