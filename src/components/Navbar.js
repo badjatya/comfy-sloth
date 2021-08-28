@@ -7,9 +7,10 @@ import { links } from "../utils/constants";
 import CartButtons from "./CartButtons";
 import { useProductsContext } from "../context/products_context";
 import { useUserContext } from "../context/user_context";
-const Nav = () => {
-  const { closeSidebar, openSidebar } = useProductsContext();
 
+const Nav = () => {
+  const { openSidebar } = useProductsContext();
+  const { myUser } = useUserContext();
   return (
     <NavContainer>
       <div className="nav-center">
@@ -30,6 +31,11 @@ const Nav = () => {
               </li>
             );
           })}
+          {myUser && (
+            <li>
+              <Link to="/checkout">checkout</Link>
+            </li>
+          )}
         </ul>
         <CartButtons />
       </div>
@@ -42,7 +48,6 @@ const NavContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-
   .nav-center {
     width: 90vw;
     margin: 0 auto;
